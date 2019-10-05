@@ -10,5 +10,5 @@ public interface IInput {
      * In this method use can write sudoku to solve
      * @return
      */
-    public int[][] inputDataForUser();
+    int[][] inputDataForUser();
 }
