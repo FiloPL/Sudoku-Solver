@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<BorderPane fx:id="borderpan" maxHeight="1000.0" maxWidth="1000.0" minHeight="0" minWidth="0" prefHeight="670.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sudokusolverFX.controller.SudokuController">
+<BorderPane fx:id="borderPane" maxHeight="750.0" maxWidth="500.0" minHeight="0" minWidth="0" prefHeight="670.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FiloPL.controller.SudokuController">
    <top>
       <MenuBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0" minWidth="0" BorderPane.alignment="CENTER">
         <menus>
@@ -29,11 +29,7 @@
             <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleSaveAction" text="Save" />
             <SplitMenuButton alignment="BASELINE_CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="31.0" prefWidth="82.0" text="Size">
               <items>
-                <MenuItem mnemonicParsing="false" onAction="#handleSizeAction" text="4x4" />
-                <MenuItem mnemonicParsing="false" onAction="#handleSizeAction" text="6x6" />
                   <MenuItem mnemonicParsing="false" onAction="#handleSizeAction" text="9x9" />
-                  <MenuItem mnemonicParsing="false" onAction="#handleSizeAction" text="12x12" />
-                  <MenuItem mnemonicParsing="false" onAction="#handleSizeAction" text="16x16" />
               </items>
                <cursor>
                   <Cursor fx:constant="HAND" />

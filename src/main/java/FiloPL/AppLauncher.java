@@ -1,68 +1,72 @@
 package FiloPL;
 
 
+import FiloPL.model.Sudoku;
 import javafx.application.Application;
 import javafx.css.PseudoClass;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
+import jdk.nashorn.internal.codegen.types.BooleanType;
+
+import java.awt.*;
+import java.io.IOException;
 
 public class AppLauncher extends Application {
+
+    private static Stage primaryStage;
+    private static BorderPane rootLayout;
+    private Sudoku sudoku = new Sudoku();
 
     public static void main(String[] args) {
         final String nameOfApp = "Sudoku Solver v1.00";
         System.out.println(nameOfApp);
+
         //Solve solve = new Solve();
         //solve.solverSoduoku();
         launch(args);
+
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         //WindowSolver windowedSolver = new WindowSolver(primaryStage);
         //windowedSolver.show();
-        GridPane board = new GridPane();
+        AppLauncher.primaryStage = primaryStage;
+        AppLauncher.primaryStage.setTitle("Sudoku Solver");
+        AppLauncher.primaryStage.getIcons().add(new Image("img/githubphoto.jpg"));
+        initLayout();
+    }
 
-        PseudoClass right = PseudoClass.getPseudoClass("right");
-        PseudoClass bottom = PseudoClass.getPseudoClass("bottom");
+    public void initLayout() {
+        try {
+            // Load FML file
+            FXMLLoader loaderFXML = new FXMLLoader();
+            loaderFXML.setLocation(AppLauncher.class.getResource("/view/RootLayout.fxml"));
+            rootLayout = (BorderPane) loaderFXML.load();
 
-        for (int col = 0; col < 9; col++) {
-            for (int row = 0; row < 9; row++) {
-                StackPane cell = new StackPane();
-                cell.getStyleClass().add("cell");
-                cell.pseudoClassStateChanged(right, col == 2 || col == 5);
-                cell.pseudoClassStateChanged(bottom, row == 2 || row == 5);
-
-                cell.getChildren().add(createTextField());
-
-                board.add(cell, col, row);
-            }
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-
-        Scene scene = new Scene(board);
-        scene.getStylesheets().add("styleheat/sudokuView.css");
-        primaryStage.setScene(scene);
-        primaryStage.show();
     }
 
-    private TextField createTextField() {
-        TextField textField = new TextField();
-
-        // restrict input to integers:
-        textField.setTextFormatter(new TextFormatter<Integer>(c -> {
-            if (c.getControlNewText().matches("\\d?")) {
-                return c ;
-            } else {
-                return null ;
-            }
-        }));
-        return textField ;
+    public Sudoku getSudoku() {
+        return sudoku;
     }
-
-
+    public void setSudoku(Sudoku sudoku) {
+        this.sudoku = sudoku;
+    }
+    public static Stage getPrimaryStage() {
+        return primaryStage;
+    }
 }
 
