@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FiloPL.model.Window">
+   <children>
+      <StackPane layoutX="-2.0" layoutY="-18.0" prefHeight="476.0" prefWidth="604.0">
+         <children>
+            <Button mnemonicParsing="false" text="Button" />
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

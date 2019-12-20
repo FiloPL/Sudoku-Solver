@@ -1,4 +1,4 @@
-package FiloPL.background;
+package FiloPL.controller;
 
 import FiloPL.input.Input;
 
