@@ -1,6 +1,6 @@
 package FiloPL;
 
-import FiloPL.background.Solve;
+import FiloPL.controller.Solve;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertTrue;

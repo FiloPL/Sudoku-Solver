@@ -1,4 +1,4 @@
-package FiloPL.background;
+package FiloPL.controller;
 
 /**
  * @author Tomasz Filo Zegarlicki
