@@ -1,11 +1,13 @@
 package FiloPL;
 
 
+import FiloPL.controller.SudokuController;
 import FiloPL.model.Sudoku;
 import javafx.application.Application;
 import javafx.css.PseudoClass;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -50,10 +52,15 @@ public class AppLauncher extends Application {
             FXMLLoader loaderFXML = new FXMLLoader();
             loaderFXML.setLocation(AppLauncher.class.getResource("/view/RootLayout.fxml"));
             rootLayout = (BorderPane) loaderFXML.load();
-
+            Label startMessage = new Label("Welcom in Sudoku Solver Program. CLick start and enjoy !");
+            rootLayout.getChildren().addAll(startMessage);
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
             primaryStage.show();
+
+//            SudokuController controller = new SudokuController();
+//            controller.SwitchScene("/view/9x9.fxml");
+//            sudoku.setSize(9);
         } catch (IOException e) {
             e.printStackTrace();
         }
