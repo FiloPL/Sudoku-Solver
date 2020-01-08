@@ -16,13 +16,14 @@
                   <Image url="/img/githubphoto.jpg" />
                </image>
             </ImageView>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sudoku Solver FX v1.0" textAlignment="CENTER" wrappingWidth="600.0">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sudoku Solver v1.0" textAlignment="CENTER" wrappingWidth="600.0">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sudoku Solver FX is a sudoku solver software. It can solve sudoku 9x9. You can load or create a file unsolved or solved" textAlignment="JUSTIFY" wrappingWidth="325.6708984375" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="© 2016 DigitalCube" wrappingWidth="143.6708984375" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sudoku Solver is a sudoku solver software." textAlignment="JUSTIFY"  />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Can solve sudoku 9x9. You can load or create a file unsolved or solved." textAlignment="JUSTIFY" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="© 2019 Tomasz Filo Zegarlicki" textAlignment="JUSTIFY"  />
             <Hyperlink text="https://github.com/FiloPL" />
          </children>
       </VBox>

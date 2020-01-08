@@ -89,27 +89,40 @@ public class SudokuController {
 
     }
 
-    private void SwitchScene(String fxml) throws IOException {
+    public void SwitchScene(String fxml) throws IOException {
         AnchorPane anchorPane = null;
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(AppLauncher.class.getResource(fxml));
         anchorPane = (AnchorPane)loader.load();
         borderPane.setCenter(anchorPane);
-        AppLauncher.getPrimaryStage().setHeight(717);
-        AppLauncher.getPrimaryStage().setWidth(768);
+        AppLauncher.getPrimaryStage().setHeight(570);
+        AppLauncher.getPrimaryStage().setWidth(550);
     }
 
+    /**
+//    @FXML
+//    private void handleSizeAction( ActionEvent event) throws IOException {
+//        MenuItem menuItem = (MenuItem) event.getSource();
+//        String label = menuItem.getText();
+//        if (label.equalsIgnoreCase("9x9")) {
+//            SwitchScene("/view/9x9.fxml");
+//            sudoku.setSize(9);
+//        } else  {
+//            System.out.println("Error - handleSizeAction");
+//        }
+//    }
+//
+     */
     @FXML
-    private void handleSizeAction( ActionEvent event) throws IOException {
-        MenuItem menuItem = (MenuItem) event.getSource();
-        String label = menuItem.getText();
-        if (label.equalsIgnoreCase("9x9")) {
+    private void show9x9field() throws IOException {
+        try{
             SwitchScene("/view/9x9.fxml");
             sudoku.setSize(9);
-        } else  {
+        } catch (Exception e) {
             System.out.println("Error - handleSizeAction");
         }
     }
+
 
     private Pane getPane() {
         AnchorPane anchorPane = null;
@@ -303,7 +316,7 @@ public class SudokuController {
         FXMLLoader loader = new FXMLLoader(AppLauncher.class.getResource("/view/About.fxml"));
         BorderPane page = (BorderPane) loader.load();
         Stage dialogStage = new Stage();
-        dialogStage.setTitle("About Sudoku Solver FX");
+        dialogStage.setTitle("About Sudoku Solver");
         dialogStage.initModality(Modality.WINDOW_MODAL);
         dialogStage.initOwner(AppLauncher.getPrimaryStage());
         dialogStage.setResizable(false);
